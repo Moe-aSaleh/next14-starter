@@ -1,0 +1,53 @@
+:root {
+    --mainColor : #0d0c22;
+    --textColor : white;
+}
+
+
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: var(--mainColor);
+    color : var(--textColor)
+}
+
+a {
+    text-decoration: none;
+    color : inherit;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    width: 1300px;
+}
+
+@media (max-width:1200px) {
+
+    .container{
+        width: 1000px;
+    }
+    
+}
+
+@media (max-width:1000px) {
+
+    .container{
+        width: 800px;
+    }
+    
+}
+
+@media (max-width:767px) {
+
+    .container{
+        width: 700px;
+    }
+    
+}

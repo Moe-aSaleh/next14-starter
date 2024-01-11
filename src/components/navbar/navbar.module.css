@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+    padding: 20px;
+}
+.navLinks {
+    display:  flex;
+    align-items: center;
+    gap: 10px;
+}
+a.active{
+    color : var(--mainColor);
+    background-color: var(--textColor);
+    padding: 5px;
+    border-radius: 10px;
+}
+span.hamBurger {
+    padding:5px ;
+    background-color: var(--textColor);
+    color : var(--mainColor);
+    cursor : pointer;
+}
+div.mobilenav {
+    display: none;
+}
+
+@media (max-width:767px) {
+
+    div.mobilenav{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        background-color: var(--mainColor);
+        width: 200px;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        position: absolute;
+        right: 0;
+    }
+    div.navLinks {
+        display: none;
+    }
+    
+}
