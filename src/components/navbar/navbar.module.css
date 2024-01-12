@@ -3,24 +3,25 @@
     justify-content: space-between;
     height: 100px;
     align-items: center;
-    padding: 20px;
+   
 }
 .navLinks {
     display:  flex;
     align-items: center;
     gap: 10px;
 }
-a.active{
+a.logBtn{
     color : var(--mainColor);
     background-color: var(--textColor);
     padding: 5px;
-    border-radius: 10px;
 }
+
 span.hamBurger {
     padding:5px ;
     background-color: var(--textColor);
     color : var(--mainColor);
     cursor : pointer;
+    display: none;
 }
 div.mobilenav {
     display: none;
@@ -28,10 +29,14 @@ div.mobilenav {
 
 @media (max-width:767px) {
 
+    span.hamBurger {
+        display: block;
+    }
+
     div.mobilenav{
         display: flex;
         flex-direction: column;
-        height: 100vh;
+        height: calc(100vh - 100px);
         background-color: var(--mainColor);
         width: 200px;
         align-items: center;
@@ -39,6 +44,7 @@ div.mobilenav {
         gap: 20px;
         position: absolute;
         right: 0;
+        z-index: -1;
     }
     div.navLinks {
         display: none;

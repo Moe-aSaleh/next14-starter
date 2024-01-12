@@ -1,57 +1,35 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import Link from "next/link";
-import styles from './navbar.module.css';
-import { usePathname } from 'next/navigation';
+import style from './navbar.module.css';
+import Links from './links/links';
 
 function Navbar() {
-  const pathname = usePathname();
-  const links = [
-    {
-      title : 'Home',
-      path :  '/' 
 
-    },
-    {
-      title : 'About us',
-      path :  '/about' 
-
-    },
-    {
-      title : 'Contact Us',
-      path :  '/contact' 
-
-    },
-    {
-      title : 'Blog',
-      path :  '/blog' 
-
-    }
-   
-  ]
+  const [navOpen , setNavopen] = useState(false)
+  const [isLogedIn , setLogedIn] = useState(false)
 
 
   return (
     <>
     
-    <div className={styles.container}>
+    <div className={style.container}>
         <div>
-          Logo
+          <Link href='/' >Moe</Link>
         </div>
-        <div className={styles.navLinks}>
-          {links.map(link=> (
-
-          <Link className={ pathname == link.path ? styles.active : undefined} href={link.path} key={link.title}>{link.title}</Link>
-          
-          ))}
-          <span className={styles.hamBurger}>Menu</span>
+        <div className={style.navLinks}>
+          <Links />
+          <Link href='/admin'>Admin</Link>  
+          <Link className={style.logBtn} href='/login'>{isLogedIn ? 'Logout' : 'Login' }</Link>  
         </div>
+          <span onClick={()=>setNavopen((prev)=>!prev)} className={style.hamBurger}>Menu</span>
     </div>
-        <div className={styles.mobilenav}>
+    
+        {navOpen && (<div className={style.mobilenav}>
           {links.map(link => (
             <Link href={link.path} key={link.path}>{link.title}</Link>
           ))}
-        </div>
+        </div>)}
     </>
   )
 }

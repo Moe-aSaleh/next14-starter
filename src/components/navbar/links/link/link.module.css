@@ -1,0 +1,9 @@
+
+
+a.active{
+    border-radius: 10px;
+    color : var(--mainColor);
+background-color: var(--textColor);
+padding: 5px;
+
+}
