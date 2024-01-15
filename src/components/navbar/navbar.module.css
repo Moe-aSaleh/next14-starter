@@ -3,6 +3,7 @@
     justify-content: space-between;
     height: 100px;
     align-items: center;
+    z-index: 10;
    
 }
 .navLinks {
@@ -44,7 +45,7 @@ div.mobilenav {
         gap: 20px;
         position: absolute;
         right: 0;
-        z-index: -1;
+        z-index: 5;
     }
     div.navLinks {
         display: none;

@@ -26,9 +26,7 @@ function Navbar() {
     </div>
     
         {navOpen && (<div className={style.mobilenav}>
-          {links.map(link => (
-            <Link href={link.path} key={link.path}>{link.title}</Link>
-          ))}
+          <Links />
         </div>)}
     </>
   )

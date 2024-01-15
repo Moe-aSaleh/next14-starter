@@ -1,5 +1,15 @@
+import Image from 'next/image'
+
+
 const Home = () => {
-  return <div>Hello World!</div>;
+
+  return (
+
+  <div className='imageContainer'>
+    <Image  src='/bmw.jpg' alt='' fill />
+  </div>
+
+  )
 };
 
 export default Home;

@@ -11,7 +11,7 @@ function SingleLink({item}) {
 
   return (
     <>
-    <Link href={item.path} className={pathname === item.path && styles.active} >{item.title}</Link>
+    <Link href={item.path} className={pathname === item.path ? styles.active : undefined} >{item.title}</Link>
     </>
   )
 }
